@@ -10,11 +10,13 @@ import java.net.UnknownHostException;
 
 public class Main {
 
-
-	//static String twitchChannel = "#heiter_bis_pingelig";
-	static String twitchChannel = "#1amnick";
-	static String account = "1ambot";
-	static String OAUTH = "oauth:qqwzj25utf98xzb7a4biqyox3zusst";
+	
+	static TempLoginInfo info = new TempLoginInfo();
+	
+	static String OAUTH = info.getOAUTH();
+	static String account = info.getAccount();
+	static String twitchChannel = info.getTwitchChannel();
+	
 
 
 
