@@ -14,7 +14,9 @@ public class Main {
 	static String OAUTH = info.getOAUTH();
 	static String account = info.getAccount();
 	static String twitchChannel = info.getTwitchChannel();
-	
+	/*
+	 * All login info is in TempLoginInfo.java which is just 3 getter methods for oauth account and channel.
+	 */
 
 
 
