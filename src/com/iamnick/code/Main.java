@@ -14,7 +14,7 @@ public class Main {
 	//static String twitchChannel = "#heiter_bis_pingelig";
 	static String twitchChannel = "#1amnick";
 	static String account = "1ambot";
-	static String OAUTH = "oauth:rornl39klo41tzxxyi9o7rtqiwwk04";
+	static String OAUTH = "oauth:qqwzj25utf98xzb7a4biqyox3zusst";
 
 
 
