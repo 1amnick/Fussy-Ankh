@@ -5,7 +5,7 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 
 import java.net.Socket;
-import java.net.UnknownHostException;
+
 
 
 
@@ -15,7 +15,7 @@ import java.net.UnknownHostException;
 
 public class Chatter {
 
-	public Chatter(Socket socket, BufferedWriter writer, BufferedReader reader) throws UnknownHostException, IOException, InterruptedException{
+	public Chatter(Socket socket, BufferedWriter writer, BufferedReader reader) throws Exception{
 
 
 
