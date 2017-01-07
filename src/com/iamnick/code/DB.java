@@ -2,6 +2,8 @@ package com.iamnick.code;
 
 import java.sql.*;
 
+import org.sqlite.SQLiteException;
+
 public class DB {
 
 	public static boolean isSubbed(String nameQuery) throws Exception {
@@ -12,18 +14,34 @@ public class DB {
 		ResultSet rs = stmt.executeQuery(query);
 		try{
 			rs.getString("User");
+			rs.close();
 			return true;
 		}catch (SQLException c) {
+			rs.close();
 			return false;
 		}
 	}
-	public static void updateJoin(String nameQuery) throws SQLException, Exception{
+	public static void updateJoin(String nameQuery, String update) throws Exception{
 		Connection conn = DBConnect("JoinDB");
 		String query = "SELECT * from JoinEvent where Name like '" + nameQuery + "'";
 		Statement stmt = conn.createStatement();
 		ResultSet rs = stmt.executeQuery(query);
 		int ID = rs.getInt("ID");
+		rs.close();
 		System.out.println(ID);
+		String updateQuery = "UPDATE JoinEvent SET Message = ? " + "WHERE ID = ?";
+
+		PreparedStatement pstmt = conn.prepareStatement(updateQuery);
+		pstmt.setString(1, update);
+		pstmt.setInt(2, ID);
+		try{
+			System.out.println("UPDATE JoinEvent SET Message = " + update + " WHERE ID = " + ID);
+			pstmt.executeUpdate();
+		}catch (SQLiteException e){
+			e.printStackTrace();
+
+		}
+
 	}
 
 
